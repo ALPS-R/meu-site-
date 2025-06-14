@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro Turístico: Vivências na Amazônia Atlântica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+            color-adjust: exact;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e6f7ed, #c1e8d5);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2E8B57, #1E5631);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10,10 Q30,5 50,20 T90,10 Q95,30 80,50 T90,90 Q70,95 50,80 T10,90 Q5,70 20,50 T10,10" fill="white"/></svg>');
+            background-size: 200px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .info-card h3 {
+            color: #2E8B57;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #2E8B57;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .day-section {
+            padding: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .day-header {
+            background: linear-gradient(90deg, #2E8B57, #3DA36D);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+            page-break-after: avoid;
+        }
+        
+        .distance-info {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .activity {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ddd;
+            page-break-inside: avoid;
+        }
+        
+        .activity:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+            page-break-after: avoid;
+        }
+        
+        .time-badge {
+            background: #2E8B57;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            min-width: 100px;
+            text-align: center;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .activity-title {
+            font-size: 1.5rem;
+            color: #1E5631;
+        }
+        
+        .location {
+            font-style: italic;
+            color: #666;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .experience-details {
+            background: #f5fcf7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #3DA36D;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .experience-section {
+            margin-bottom: 15px;
+        }
+        
+        .experience-section h4 {
+            color: #2E8B57;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .equipment-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .equipment-item {
+            background: #e3f2fd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .pricing {
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .price-tag {
+            background: #2E8B57;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .historical-context {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid #ffa000;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+            page-break-inside: avoid;
+        }
+        
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .context-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+        
+        .attraction-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            page-break-inside: avoid;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .attraction-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .attraction-content {
+            padding: 20px;
+            background: white;
+        }
+        
+        .attraction-content h3 {
+            color: #2E8B57;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #1E5631, #2E8B57);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        .contact-card h3 {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .copyright {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .day-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .activity-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        /* Botões de impressão */
+        .print-controls {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .print-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn-primary {
+            background: #2E8B57;
+            color: white;
+        }
+        
+        .print-btn-secondary {
+            background: #1E5631;
+            color: white;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .print-btn i {
+            font-size: 1.2rem;
+        }
+        
+        /* Estilos para impressão */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            @page {
+                margin: 1.5cm;
+            }
+            
+            .container {
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .print-controls {
+                display: none;
+            }
+            
+            .day-section, .activity, .historical-context, .attractions-grid, .contact-card {
+                page-break-inside: avoid !important;
+            }
+            
+            h1, h2, h3, h4, .day-header, .activity-header {
+                page-break-after: avoid !important;
+            }
+            
+            .fa, .fas, .far, .fab {
+                display: inline-block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Botões de controle de impressão -->
+        <div class="print-controls">
+            <button class="print-btn print-btn-primary" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir Roteiro
+            </button>
+            <button class="print-btn print-btn-secondary" onclick="togglePrintPreview()">
+                <i class="fas fa-eye"></i> Visualizar Impressão
+            </button>
+        </div>
+        
+        <header>
+            <h1><i class="fas fa-map-marked-alt"></i> ROTEIRO TURÍSTICO DE VIVÊNCIA E IMERSÃO</h1>
+            <p class="subtitle">Bragança e Augusto Corrêa - Região Amazônia Atlântica Caeté</p>
+        </header>
+
+        <div class="info-container">
+            <div class="info-card">
+                <h3><i class="fas fa-calendar-alt"></i> Informações Gerais</h3>
+                <p><strong>Duração:</strong> 3 dias / 2 noites</p>
+                <p><strong>Tipo:</strong> Circuito de Experiências Culturais e Ecológicas</p>
+                <p><strong>Ponto de Partida:</strong> Terminal Rodoviário de São Brás, Belém</p>
+                <p><strong>Público-Alvo:</strong> Adultos e famílias (crianças acima de 10 anos)</p>
+                <p><strong>Nível de Atividade:</strong> Moderado</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-road"></i> Distâncias</h3>
+                <p><strong>Belém → Bragança:</strong> 210 km (3h30)</p>
+                <p><strong>Bragança → Augusto Corrêa:</strong> 65 km (1h30)</p>
+                <p><strong>Augusto Corrêa → Belém:</strong> 275 km (4h)</p>
+                <p><strong>Total Percorrido:</strong> 550 km</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle"></i> Informações Adicionais</h3>
+                <p><strong>Documentação:</strong> RG/CPF e vacina febre amarela</p>
+                <p><strong>Melhor Época:</strong> Junho a dezembro</p>
+                <p><strong>Pagamento:</strong> À vista (5% desc.) ou 3x (5% acresc.)</p>
+                <p><strong>Cancelamento:</strong> Até 7 dias antes (80% reembolso)</p>
+            </div>
+        </div>
+
+        <div class="historical-context">
+            <h3><i class="fas fa-book"></i> Contexto Histórico e Cultural</h3>
+            <div class="context-grid">
+                <div class="context-item">
+                    <h4>Bragança (PA)</h4>
+                    <p><strong>Fundação:</strong> 1613 (um dos municípios mais antigos do Pará)</p>
+                    <p><strong>População:</strong> 128.914 habitantes (IBGE 2022)</p>
+                    <p><strong>Economia:</strong> Pesca, turismo, comércio e serviços</p>
+                    <p><strong>Patrimônio Cultural:</strong> Marujada (patrimônio imaterial)</p>
+                </div>
+                
+                <div class="context-item">
+                    <h4>Augusto Corrêa (PA)</h4>
+                    <p><strong>Fundação:</strong> 1961 (emancipação de Bragança)</p>
+                    <p><strong>População:</strong> 46.221 habitantes (IBGE 2022)</p>
+                    <p><strong>Economia:</strong> Agricultura familiar, extrativismo e turismo comunitário</p>
+                    <p><strong>Patrimônio Cultural:</strong> Comunidades quilombolas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dia 1 - Belém para Bragança -->
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Dia 1: Belém → Bragança</h2>
+                <span>Enfoque: História e Ecossistemas Costeiros</span>
+            </div>
+            
+            <div class="distance-info">
+                <i class="fas fa-road"></i>
+                <strong>Distância a percorrer:</strong> Terminal São Brás (Belém) → Bragança: 210 km (aproximadamente 3h30 de viagem)
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">06:00</div>
+                    <h3 class="activity-title">Saída do Terminal Rodoviário de São Brás</h3>
+                </div>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor do transporte</span>
+                    <span class="price-tag">R$ 120/pessoa (ida e volta)</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Transporte:</strong> Van turística com ar condicionado
+                    </div>
+                    <div class="detail-item">
+                        <strong>Duração:</strong> 3h30 (com parada técnica)
+                    </div>
+                    <div class="detail-item">
+                        <strong>Inclui:</strong> Água mineral e lanche leve
+                    </div>
+                    <div class="detail-item">
+                        <strong>Observação:</strong> Embarque 30 minutos antes da saída
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">09:30</div>
+                    <h3 class="activity-title">Chegada a Bragança e café da manhã</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Restaurante do Caranguejo (Av. Nações Unidas, 450, Praia)</p>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor do café</span>
+                    <span class="price-tag">R$ 25/pessoa (incluído no pacote)</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Cardápio:</strong> Frutas regionais, tapioca, sucos naturais e café
+                    </div>
+                    <div class="detail-item">
+                        <strong>Duração:</strong> 1h
+                    </div>
+                    <div class="detail-item">
+                        <strong>Acessibilidade:</strong> Mesas ao ar livre com acesso para cadeirantes
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">10:30</div>
+                    <h3 class="activity-title">Forte do Caeté</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Av. São Sebastião, Centro (500m do restaurante - 5min de deslocamento)</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-landmark"></i> Características do Local</h4>
+                        <p>Construção militar do século XVII com vista panorâmica para o Rio Caeté. Um dos marcos históricos mais importantes da região, testemunha da colonização portuguesa no norte do Brasil.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-hiking"></i> Experiência</h4>
+                        <p>Visita guiada com explicação histórica sobre a função estratégica do forte na defesa do território contra invasores estrangeiros e sua importância no contexto do ciclo da borracha.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Pré-requisitos</h4>
+                        <ul>
+                            <li>Capacidade de subir escadas (o forte possui dois níveis)</li>
+                            <li>Interesse por história colonial brasileira</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-tshirt"></i> Equipamentos Necessários</h4>
+                        <div class="equipment-list">
+                            <span class="equipment-item"><i class="fas fa-shoe-prints"></i> Calçados confortáveis</span>
+                            <span class="equipment-item"><i class="fas fa-hat-cowboy"></i> Chapéu</span>
+                            <span class="equipment-item"><i class="fas fa-sun"></i> Protetor solar</span>
+                            <span class="equipment-item"><i class="fas fa-camera"></i> Câmera fotográfica</span>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-info-circle"></i> Informações Adicionais</h4>
+                        <p><strong>Duração:</strong> 1h30 | <strong>Dificuldade:</strong> Baixa (escadas com corrimão) | <strong>Acessibilidade:</strong> Calçadas irregulares - acesso limitado para cadeirantes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Atividades que estavam faltando em Bragança -->
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">12:30</div>
+                    <h3 class="activity-title">Almoço no Restaurante do Caranguejo</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Av. Nações Unidas, 450, Praia</p>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor do almoço</span>
+                    <span class="price-tag">R$ 50/pessoa (incluído no pacote)</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Cardápio:</strong> Caranguejo ao molho de coco (prato típico)
+                    </div>
+                    <div class="detail-item">
+                        <strong>Duração:</strong> 1h30
+                    </div>
+                    <div class="detail-item">
+                        <strong>Ambiente:</strong> Vista para a praia, mesas ao ar livre
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">14:30</div>
+                    <h3 class="activity-title">Passeio de Barco pelos Manguezais do Rio Caeté</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Porto de Bragança</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-water"></i> Características do Local</h4>
+                        <p>Ecossistema de manguezais com rica biodiversidade, habitat de diversas espécies de aves, caranguejos e peixes. Área de preservação ambiental com paisagem única.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-ship"></i> Experiência</h4>
+                        <p>Passeio de barco guiado por especialistas locais, com observação de aves e explicação sobre a importância ecológica dos manguezais para o ecossistema costeiro.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Pré-requisitos</h4>
+                        <ul>
+                            <li>Equilíbrio para embarcar/desembarcar</li>
+                            <li>Confortável com passeios em embarcações pequenas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-tshirt"></i> Equipamentos Necessários</h4>
+                        <div class="equipment-list">
+                            <span class="equipment-item"><i class="fas fa-umbrella-beach"></i> Capa de chuva</span>
+                            <span class="equipment-item"><i class="fas fa-binoculars"></i> Binóculos</span>
+                            <span class="equipment-item"><i class="fas fa-sun"></i> Protetor solar</span>
+                            <span class="equipment-item"><i class="fas fa-camera"></i> Câmera fotográfica</span>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-info-circle"></i> Informações Adicionais</h4>
+                        <p><strong>Duração:</strong> 2h30 | <strong>Acessibilidade:</strong> Não adaptado para cadeirantes</p>
+                    </div>
+                </div>
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor do passeio</span>
+                    <span class="price-tag">R$ 80/pessoa</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">17:30</div>
+                    <h3 class="activity-title">Centro Cultural da Marujada</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Rua Siqueira Campos, 150, Centro</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-landmark"></i> Características do Local</h4>
+                        <p>Espaço cultural dedicado à preservação e apresentação da Marujada, manifestação cultural afro-brasileira reconhecida como patrimônio imaterial brasileiro.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-music"></i> Experiência</h4>
+                        <p>Apresentação da tradicional dança da Marujada, com trajes típicos e músicas ancestrais. Exposição de instrumentos musicais e trajes históricos usados na manifestação cultural.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-info-circle"></i> Informações Adicionais</h4>
+                        <p><strong>Duração:</strong> 1h | <strong>Valor:</strong> Gratuito (exceto em eventos especiais)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">19:00</div>
+                    <h3 class="activity-title">Jantar e Pernoite na Pousada Marujada</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Rua 15 de Agosto, 120, Centro</p>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor da hospedagem</span>
+                    <span class="price-tag">R$ 120/noite (café da manhã incluso)</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Características:</strong> Ambiente acolhedor com decoração regional
+                    </div>
+                    <div class="detail-item">
+                        <strong>Acessibilidade:</strong> Banheiros adaptados
+                    </div>
+                    <div class="detail-item">
+                        <strong>Refeição:</strong> Jantar com pratos regionais
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dia 2 - Bragança para Augusto Corrêa -->
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Dia 2: Bragança → Augusto Corrêa</h2>
+                <span>Enfoque: Ecoturismo e Cultura Quilombola</span>
+            </div>
+            
+            <div class="distance-info">
+                <i class="fas fa-road"></i>
+                <strong>Distância a percorrer:</strong> Bragança → Augusto Corrêa: 65 km (aproximadamente 1h30 de viagem em veículo 4x4)
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">07:00</div>
+                    <h3 class="activity-title">Café da manhã e transfer para Augusto Corrêa</h3>
+                </div>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor do transfer</span>
+                    <span class="price-tag">R$ 60/pessoa</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Transporte:</strong> Veículo 4x4 com capacidade para 8 passageiros
+                    </div>
+                    <div class="detail-item">
+                        <strong>Duração:</strong> 1h30 (com paradas para fotos)
+                    </div>
+                    <div class="detail-item">
+                        <strong>Características do trajeto:</strong> Estrada parcialmente pavimentada com trechos de terra
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">09:00</div>
+                    <h3 class="activity-title">Cachoeira do Pirá</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Parque Estadual, BR-316 (km 78) + trilha de 3km</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-mountain"></i> Características do Local</h4>
+                        <p>Cachoeira de 120m de altura em meio à floresta nativa, com piscinas naturais de águas cristalinas. Localizada dentro do Parque Estadual, área de preservação ambiental com rica biodiversidade.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-hiking"></i> Experiência</h4>
+                        <p>Trilha ecológica guiada com interpretação ambiental, banho refrescante nas piscinas naturais e observação da flora e fauna amazônica. O guia local compartilha conhecimentos sobre plantas medicinais e espécies nativas.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Pré-requisitos</h4>
+                        <ul>
+                            <li>Condicionamento físico moderado</li>
+                            <li>Idade mínima: 12 anos</li>
+                            <li>Peso máximo para segurança: 120kg</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-tshirt"></i> Equipamentos Necessários</h4>
+                        <div class="equipment-list">
+                            <span class="equipment-item"><i class="fas fa-hiking"></i> Calçados antiderrapantes</span>
+                            <span class="equipment-item"><i class="fas fa-swimmer"></i> Roupa de banho</span>
+                            <span class="equipment-item"><i class="fas fa-wind"></i> Toalha rápida-seca</span>
+                            <span class="equipment-item"><i class="fas fa-bug"></i> Repelente</span>
+                            <span class="equipment-item"><i class="fas fa-sun"></i> Protetor solar</span>
+                            <span class="equipment-item"><i class="fas fa-tint"></i> Mochila com água (2L)</span>
+                            <span class="equipment-item"><i class="fas fa-first-aid"></i> Kit primeiros socorros</span>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-info-circle"></i> Informações Adicionais</h4>
+                        <p><strong>Duração Total:</strong> 4h | <strong>Restrições:</strong> Proibido nadar após chuvas fortes</p>
+                    </div>
+                </div>
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor da experiência</span>
+                    <span class="price-tag">R$ 50/pessoa (guia local incluso)</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">13:30</div>
+                    <h3 class="activity-title">Almoço no Restaurante Comunitário Bom Remédio</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Comunidade Bom Remédio</p>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor do almoço</span>
+                    <span class="price-tag">R$ 35/pessoa</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Cardápio:</strong> Peixe assado, farinha de mandioca artesanal e legumes regionais
+                    </div>
+                    <div class="detail-item">
+                        <strong>Ambiente:</strong> Espaço rústico com vista para a comunidade
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">15:00</div>
+                    <h3 class="activity-title">Vivência Quilombola</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Comunidade Quilombola Bom Remédio</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-people-roof"></i> Características do Local</h4>
+                        <p>Comunidade quilombola centenária com arquitetura tradicional e modo de vida preservado. Fundada por descendentes de escravizados fugidos, mantém tradições culturais ancestrais.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-hands-helping"></i> Experiência</h4>
+                        <p>Oficina de artesanato com materiais naturais, demonstração de técnicas agrícolas tradicionais, roda de conversa com anciãos sobre história oral e costumes locais.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Pré-requisitos</h4>
+                        <ul>
+                            <li>Respeito às tradições locais</li>
+                            <li>Vestuário discreto</li>
+                            <li>Autorização para fotos deve ser solicitada</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-info-circle"></i> Informações Adicionais</h4>
+                        <p><strong>Duração:</strong> 3h | <strong>Restrições:</strong> Comunidade fecha em dias de rituais religiosos</p>
+                    </div>
+                </div>
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor da experiência</span>
+                    <span class="price-tag">R$ 30/pessoa</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">19:00</div>
+                    <h3 class="activity-title">Jantar e Pernoite no Eco-lodge Bom Remédio</h3>
+                </div>
+                
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor da hospedagem</span>
+                    <span class="price-tag">R$ 100/noite (café da manhã incluso)</span>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Características:</strong> Chalés rústicos com redes, energia solar
+                    </div>
+                    <div class="detail-item">
+                        <strong>Acessibilidade:</strong> Banheiro adaptado disponível
+                    </div>
+                    <div class="detail-item">
+                        <strong>Atividade Noturna:</strong> Contação de histórias tradicionais
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dia 3 - Augusto Corrêa para Belém -->
+        <div class="day-section">
+            <div class="day-header">
+                <h2>Dia 3: Augusto Corrêa → Belém</h2>
+                <span>Enfoque: Agroecologia e Retorno</span>
+            </div>
+            
+            <div class="distance-info">
+                <i class="fas fa-road"></i>
+                <strong>Distância a percorrer:</strong> Augusto Corrêa → Terminal São Brás (Belém): 275 km (aproximadamente 4h de viagem)
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">08:00</div>
+                    <h3 class="activity-title">Café da manhã no Sítio Flor do Cajueiro</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Zona Rural (vicinal com acesso por estrada de terra)</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-tree"></i> Características do Local</h4>
+                        <p>Propriedade rural familiar especializada em produção sustentável de cacau e chocolate artesanal. Ambiente natural preservado com diversidade de espécies frutíferas.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-seedling"></i> Experiência</h4>
+                        <p>Visita guiada ao cultivo de cacau, demonstração do processo de transformação do cacau em chocolate e degustação de produtos artesanais. Conversa sobre práticas agroecológicas.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-utensils"></i> Degustação</h4>
+                        <p>Variedade de chocolates artesanais com diferentes porcentagens de cacau e combinações com frutas regionais (cupuaçu, açaí e bacuri).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">09:00</div>
+                    <h3 class="activity-title">Canoagem no Rio Caeté</h3>
+                </div>
+                
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Porto de Augusto Corrêa</p>
+                
+                <div class="experience-details">
+                    <div class="experience-section">
+                        <h4><i class="fas fa-water"></i> Características do Local</h4>
+                        <p>Trecho preservado do rio com manguezais, igarapés e rica biodiversidade. Área de ocorrência frequente de botos-cor-de-rosa e tucuxis.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-ship"></i> Experiência</h4>
+                        <p>Passeio de canoa tradicional com guia local especializado em ecologia fluvial. Observação de botos em seu habitat natural e interpretação do ecossistema de manguezal.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Pré-requisitos</h4>
+                        <ul>
+                            <li>Saber nadar (obrigatório)</li>
+                            <li>Peso máximo por canoa: 180kg (2 pessoas)</li>
+                            <li>Idade mínima: 14 anos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-tshirt"></i> Equipamentos Necessários</h4>
+                        <div class="equipment-list">
+                            <span class="equipment-item"><i class="fas fa-tshirt"></i> Roupa rápida-seca</span>
+                            <span class="equipment-item"><i class="fas fa-sun"></i> Protetor solar</span>
+                            <span class="equipment-item"><i class="fas fa-hat-cowboy"></i> Chapéu com abas</span>
+                            <span class="equipment-item"><i class="fas fa-binoculars"></i> Binóculos (opcional)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h4><i class="fas fa-info-circle"></i> Informações Adicionais</h4>
+                        <p><strong>Duração:</strong> 2h | <strong>Restrições:</strong> Atividade suspensa em caso de chuvas fortes</p>
+                    </div>
+                </div>
+                <div class="pricing">
+                    <span><i class="fas fa-tag"></i> Valor da experiência</span>
+                    <span class="price-tag">R$ 70/pessoa</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="time-badge">12:00</div>
+                    <h3 class="activity-title">Retorno a Belém</h3>
+                </div>
+                
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Transporte:</strong> Van turística com ar condicionado
+                    </div>
+                    <div class="detail-item">
+                        <strong>Duração:</strong> Aproximadamente 4h
+                    </div>
+                    <div class="detail-item">
+                        <strong>Chegada prevista:</strong> Terminal São Brás às 16:00
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-color: #8bc34a;"></div>
+                <div class="attraction-content">
+                    <h3>Forte do Caeté</h3>
+                    <p>Construção militar do século XVII com vista para o Rio Caeté. Marco histórico da colonização portuguesa no norte do Brasil.</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-color: #4caf50;"></div>
+                <div class="attraction-content">
+                    <h3>Manguezais do Rio Caeté</h3>
+                    <p>Passeio de barco por ecossistema rico em biodiversidade. Observação de aves e caranguejos em seu habitat natural.</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-color: #2e7d32;"></div>
+                <div class="attraction-content">
+                    <h3>Dança da Marujada</h3>
+                    <p>Manifestação cultural afro-brasileira reconhecida como patrimônio imaterial. Apresentações no Centro Cultural da Marujada.</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-color: #1b5e20;"></div>
+                <div class="attraction-content">
+                    <h3>Cachoeira do Pirá</h3>
+                    <p>Queda d'água de 120m em meio à floresta amazônica. Trilha ecológica com banho em piscinas naturais.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3><i class="fas fa-address-book"></i> Contatos Oficiais</h3>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <h4>Secretaria de Turismo de Bragança</h4>
+                    <p><i class="fas fa-phone"></i> (91) 3425-1122</p>
+                    <p><i class="fas fa-envelope"></i> turismo@bragapa.pa.gov.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. São Sebastião, 150 - Centro</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Associação de Turismo Comunitário de Augusto Corrêa</h4>
+                    <p><i class="fas fa-phone"></i> (91) 98765-1234</p>
+                    <p><i class="fas fa-envelope"></i> atc.augustocorrea@gmail.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Prefeitura Municipal de Augusto Corrêa</h4>
+                    <p><i class="fas fa-phone"></i> (91) 3453-1155</p>
+                    <p><i class="fas fa-envelope"></i> turismo@augustocorrea.pa.gov.br</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Roteiro elaborado conforme normas técnicas do Ministério do Turismo - 2025</p>
+                <p>Banco de Dados Turístico - Bragança e Augusto Corrêa | Atividade Acadêmica - Turismo Pará</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        function togglePrintPreview() {
+            const printPreviewStyle = `
+                body {
+                    background: white !important;
+                    color: black !important;
+                    padding: 0 !important;
+                }
+                * {
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                    color-adjust: exact !important;
+                }
+                .container {
+                    max-width: 100%;
+                    margin: 0;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+                .print-controls {
+                    display: none;
+                }
+                .day-section, .activity, .historical-context, .attractions-grid, .contact-card {
+                    page-break-inside: avoid !important;
+                }
+                h1, h2, h3, h4, .day-header, .activity-header {
+                    page-break-after: avoid !important;
+                }
+                .fa, .fas, .far, .fab {
+                    display: inline-block !important;
+                }
+            `;
+            
+            const styleSheet = document.createElement("style");
+            styleSheet.type = "text/css";
+            styleSheet.innerText = printPreviewStyle;
+            document.head.appendChild(styleSheet);
+            
+            alert("Visualização de impressão ativada! Use Ctrl+P para ver o resultado.");
+        }
+    </script>
+</body>
+</html>
